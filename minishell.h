@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/27 08:50:29 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/28 10:47:07 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/29 14:54:35 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@ typedef struct	s_env
 	char		**args;
 	char		**env_var;
 }				t_env;
+
+void			ft_cd(t_env *env);
+
+void			change_env(char *name, char *info, t_env *env);
+
+char			*get_env(char *var, t_env *env);
 
 void			ft_unsetenv(t_env *env);
 

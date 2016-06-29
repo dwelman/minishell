@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/27 12:41:57 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/28 15:56:07 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/29 14:59:56 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void	execute(t_env *env)
 		ft_setenv(env);
 	else if (ft_strcmp(env->com, "unsetenv") == 0)
 		ft_unsetenv(env);
+	else if (ft_strcmp(env->com, "cd") == 0)
+		ft_cd(env);
 	else if (ft_strlen(env->com) > 0 && ft_strcmp(env->com, "\t") != 0)
 		ft_printf("unknown command: %s\n", env->com);
 	/*pid_t	pid;
