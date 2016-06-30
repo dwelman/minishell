@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/27 12:41:57 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/29 14:59:56 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/30 13:31:46 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	execute(t_env *env)
 {
-	if (ft_strcmp(env->com, "exit") == 0 || ft_strcmp(env->com, "quit" ) == 0)
+	if (ft_strcmp(env->com, "exit") == 0 || ft_strcmp(env->com, "quit") == 0)
 		env->done = 1;
 	else if (ft_strcmp(env->com, "clear") == 0)
 		ft_printf("\033c");
@@ -28,26 +28,8 @@ void	execute(t_env *env)
 		ft_unsetenv(env);
 	else if (ft_strcmp(env->com, "cd") == 0)
 		ft_cd(env);
-	else if (ft_strlen(env->com) > 0 && ft_strcmp(env->com, "\t") != 0)
-		ft_printf("unknown command: %s\n", env->com);
-	/*pid_t	pid;
-	pid_t	wpid;
-	int		status;
-	
-	pid = fork();
-	if (pid == 0)
-	{
-		execvp(env->com, env->args);
-	}
-	else if (pid < 0)
-	{
-		ft_printf("Error running: %s\n", env->com);
-	}
+	else if (ft_strcmp(env->com, "pwd") == 0)
+		ft_pwd(env);
 	else
-	{
-		while (!WIFEXITED(status) && !WIFSIGNALED(status))
-		{
-			wpid = waitpid(pid, &status, WUNTRACED);
-		}
-	}*/
+		ft_run(env);
 }

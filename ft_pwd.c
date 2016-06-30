@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   loop.c                                             :+:      :+:    :+:   */
+/*   ft_pwd.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/27 09:05:54 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/30 12:21:33 by daviwel          ###   ########.fr       */
+/*   Created: 2016/06/30 08:26:03 by daviwel           #+#    #+#             */
+/*   Updated: 2016/06/30 09:09:39 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-void	loop(t_env *env)
+void	ft_pwd(t_env *env)
 {
-	char	*line;
+	char	*path;
 
-	env->done = 0;
-	while (env->done == 0)
+	path = get_env("PWD", env);
+	if (path != NULL)
 	{
-		ft_printf("$> ");
-		get_next_line(0, &line);
-		get_commands(line, env);
-		execute(env);
-		free(line);
-		if (env->num_args > 0)
-			free(env->args);
+		path = ft_strchr(path, '=');
+		path++;
+		ft_printf("%s\n", path);
 	}
+	else
+		ft_printf("PWD not found\n");
 }

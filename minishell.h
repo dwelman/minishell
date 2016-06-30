@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/27 08:50:29 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/29 14:54:35 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/30 15:32:17 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,23 @@ typedef struct	s_env
 {
 	int			done;
 	int			num_args;
+	char		**argv;
 	char		*com;
 	char		**args;
 	char		**env_var;
 }				t_env;
+
+int				count_words(char *line);
+
+void			args(char *line, t_env *env);
+
+int				wordlen(char *line);
+
+char			*build_path(char *tmp, char *add);
+
+void			ft_run(t_env *env);
+
+void			ft_pwd(t_env *env);
 
 void			ft_cd(t_env *env);
 

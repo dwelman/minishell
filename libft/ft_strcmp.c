@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/20 13:09:20 by daviwel           #+#    #+#             */
-/*   Updated: 2016/05/20 13:09:33 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/30 09:29:20 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_strcmp(const char *s1, const char *s2)
 	str1 = (unsigned char*)s1;
 	str2 = (unsigned char*)s2;
 	i = 0;
-	while (str1[i] != '\0' || str2[i] != '\0')
+	while (str1[i] != '\0' && str2[i] != '\0')
 	{
 		if (str1[i] != str2[i])
 			return (str1[i] - str2[i]);

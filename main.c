@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/27 08:52:02 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/28 15:20:44 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/06/30 13:34:11 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ int		main(int argc, char **argv, char **environ)
 	if (argc > 1)
 		ft_printf("Unused variable: %s\n", argv[1]);
 	env.env_var = copy_env(environ);
+	env.argv = NULL;
 	loop(&env);
 	if (env.env_var)
 		free_arr(env.env_var);
