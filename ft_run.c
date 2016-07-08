@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/30 11:07:28 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/30 13:34:07 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/08 10:12:29 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		run_bin(t_env *env)
 				bin = env->com;
 			else
 				bin = build_path(paths[i], env->com);
-			if (execve(bin, env->argv, NULL) != -1)
+			if (execve(bin, env->argv, env->env_var) != -1)
 				return (1);
 			i++;
 		}
