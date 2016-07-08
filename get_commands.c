@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/27 09:46:06 by daviwel           #+#    #+#             */
-/*   Updated: 2016/06/30 14:36:55 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/08 15:19:19 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	command(char *line, t_env *env)
 	int	j;
 
 	j = 0;
-	while (line[j] != ' ' && line[j] != '\0')
+	while (line[j] != '\0')
 		j++;
 	env->com = (char *)malloc(sizeof(char) * j + 1);
 	j = 0;
